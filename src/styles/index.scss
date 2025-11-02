@@ -16,6 +16,7 @@ body {
   --moyo-blue: #00acdc;
   --text-color: #060b35;
   --shift-line: 16px;
+  --duration: 300ms;
 }
 
 .header {
@@ -87,17 +88,20 @@ body {
 }
 
 .nav__link:hover {
-  transition-duration: 300ms;
+  color: var(--moyo-blue);
+  transition-duration: var(--duration);
   text-decoration: underline;
   text-decoration-color: var(--moyo-blue);
 }
 
 .catalog {
   display: grid;
-
+  margin-top: 50px;
+  margin-left: 40px;
   width: 100%;
   grid-template-columns: repeat(auto-fill, 200px);
-  gap: 46px 48px;
+  row-gap: 48px;
+  column-gap: 46px;
 }
 
 @media (min-width: 488px) {
@@ -127,13 +131,11 @@ body {
 .catalog__card {
   display: block;
   box-sizing: border-box;
-  margin-top: 50px;
-  margin-left: 40px;
   border: 1px solid #f3f3f3;
   width: fit-content;
   border-radius: 5px;
 
-  &-image {
+  &__image {
     background-image: url(../images/imac.jpeg);
     background-repeat: no-repeat;
     background-position: center;
@@ -144,21 +146,16 @@ body {
     margin-left: var(--shift-line);
   }
 
-  &-header {
+  &__header {
     width: 166px;
     height: 36px;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     margin: 40px 16px 0;
-
-    &:hover {
-      transition-duration: 300ms;
-      color: #34568b;
-    }
   }
 
-  &-product-code {
+  &__product-code {
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -166,7 +163,11 @@ body {
   }
   &:hover {
    transform: scale(1.2);
-    transition-duration: 300ms;
+    transition-duration: var(--duration);
+  }
+  &:hover .catalog__card__header {
+    transition-duration: var(--duration);
+    color: #34568b;
   }
 }
 
@@ -214,13 +215,13 @@ body {
     text-decoration: none;
 
     &:hover {
-      transition-duration: 300ms;
+      transition-duration: var(--duration);
       color: var(--moyo-blue);
     }
   }
 
   &:hover {
-    transition-duration: 300ms;
+    transition-duration: var(--duration);
     background-color: #fff;
     border: 1px solid var(--moyo-blue);
   }
