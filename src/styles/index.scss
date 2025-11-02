@@ -87,6 +87,7 @@ body {
 }
 
 .nav__link:hover {
+  transition-duration: 300ms;
   text-decoration: underline;
   text-decoration-color: var(--moyo-blue);
 }
@@ -150,6 +151,11 @@ body {
     font-size: 12px;
     line-height: 18px;
     margin: 40px 16px 0;
+
+    &:hover {
+      transition-duration: 300ms;
+      color: #34568b;
+    }
   }
 
   &-product-code {
@@ -158,11 +164,12 @@ body {
     line-height: 14px;
     margin-left: var(--shift-line);
   }
+  &:hover {
+   transform: scale(1.2);
+    transition-duration: 300ms;
+  }
 }
 
-.catalod__card:hover .catalog__card-header {
-  color: #34568b;
-}
 
 .price {
   display: flex;
@@ -207,11 +214,13 @@ body {
     text-decoration: none;
 
     &:hover {
+      transition-duration: 300ms;
       color: var(--moyo-blue);
     }
   }
 
   &:hover {
+    transition-duration: 300ms;
     background-color: #fff;
     border: 1px solid var(--moyo-blue);
   }
